@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Awesome Website</title>
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (async () => {
+        try {
+          const r = await fetch(
+            "https://noteefypublic.blob.core.windows.net/widget/scripts/manifest.dev.json",
+            { cache: "no-cache" }
+          );
+          const { url, integrity } = await r.json();
+          const s = document.createElement("script");
+          s.src = url;
+          s.integrity = integrity;
+          s.crossOrigin = "anonymous";
+          s.async = true;
+          s.onerror = (e) => console.warn("Noteefy widget failed to load", e);
+          document.head.appendChild(s);
+        } catch (e) {
+          console.warn("Noteefy manifest fetch failed", e);
+        }
+      })();
+    </script>
   </head>
   <body>
     <header>

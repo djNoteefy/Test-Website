@@ -15,7 +15,7 @@
           const { url, integrity } = await r.json();
           const s = document.createElement("script");
           s.src = url;
-          s.integrity = integrity;
+          // s.integrity = integrity;
           s.crossOrigin = "anonymous";
           s.async = true;
           s.onerror = (e) => console.warn("Noteefy widget failed to load", e);

@@ -145,6 +145,34 @@
       </div>
     </footer>
 
+    <!-- Custom Widget -->
+    <div id="custom-widget" class="widget-container">
+      <div class="widget-toggle" onclick="toggleWidget()">
+        <span class="widget-icon">💬</span>
+        <span class="widget-toggle-text">Click to open widget</span>
+      </div>
+      <div class="widget-content">
+        <div class="widget-header">
+          <h3>Custom Widget</h3>
+          <button class="widget-close" onclick="closeWidget()">×</button>
+        </div>
+        <div class="widget-body">
+          <div class="widget-content-inner">
+            <p>This is a custom widget that can be opened and closed!</p>
+            <p>You can add any content here.</p>
+            <div class="widget-actions">
+              <button
+                class="widget-btn"
+                onclick="alert('Widget action clicked!')"
+              >
+                Action Button
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

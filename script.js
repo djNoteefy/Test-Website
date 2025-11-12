@@ -211,3 +211,46 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Widget Control Functions
+function openWidget() {
+  const widgetContent = document.querySelector(".widget-content");
+  const widgetContainer = document.querySelector(".widget-container");
+  if (widgetContent) {
+    widgetContent.classList.add("open");
+    if (widgetContainer) {
+      widgetContainer.classList.add("widget-open");
+    }
+  }
+}
+
+function closeWidget() {
+  const widgetContent = document.querySelector(".widget-content");
+  const widgetContainer = document.querySelector(".widget-container");
+  if (widgetContent) {
+    widgetContent.classList.remove("open");
+    if (widgetContainer) {
+      widgetContainer.classList.remove("widget-open");
+    }
+  }
+}
+
+function toggleWidget() {
+  const widgetContent = document.querySelector(".widget-content");
+  const widgetContainer = document.querySelector(".widget-container");
+  if (widgetContent) {
+    const isOpen = widgetContent.classList.toggle("open");
+    if (widgetContainer) {
+      if (isOpen) {
+        widgetContainer.classList.add("widget-open");
+      } else {
+        widgetContainer.classList.remove("widget-open");
+      }
+    }
+  }
+}
+
+// Make functions globally available
+window.openWidget = openWidget;
+window.closeWidget = closeWidget;
+window.toggleWidget = toggleWidget;
